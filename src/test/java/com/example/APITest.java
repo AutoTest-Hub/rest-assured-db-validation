@@ -72,6 +72,7 @@ public class APITest {
 
     @Test
     public void validatePostResponseWithDB() {
+        // Ensure you are updating the payload and the actual rest endpoints.
         String requestBody = "{ \"key1\": \"value1\", \"key2\": \"value2\" }";
         
         // Perform POST Request
@@ -95,6 +96,8 @@ public class APITest {
         // Query Database
         try {
             Statement statement = connection.createStatement();
+            
+            // Update the name of the tables and the below query as needed.
             ResultSet resultSet = statement.executeQuery("SELECT * FROM your_table WHERE id = " + id);
             if (resultSet.next()) {
                 String dbKey1 = resultSet.getString("key1");
